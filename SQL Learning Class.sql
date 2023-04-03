@@ -132,7 +132,7 @@ VALUES
  
  select title, pages from books order by pages desc limit 1;
  
- select distinct concat(Title, ' - ' , released_year) As Summary from books limit 3;
+ select concat(Title, ' - ' , released_year) As Summary from books order by released_year desc limit 3;
  
  Select title, author_lname from books where author_lname like '% %' ;
  
