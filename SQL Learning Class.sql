@@ -93,7 +93,20 @@ As BookTitle from books;
 
  select concat(substr(author_fname,1,1),'.',substr(author_lname,1,1),'.') As 'Author Initials' from books;
  
-SELECT 
+SELECT id, company_name, country from customers order by country;
+
+select count(*) from books;
+
+select count(author_fname) from books; -- This gives us 19 books instead of 22 because there is a Null/empty row 
+
+select count( distinct author_fname) from books;
+
+select author_fname from books;
+
+
+
+
+
     CONCAT_WS('. ',
             SUBSTR(author_fname, 1, 1),
             SUBSTR(author_lname, 1, 1),
@@ -128,16 +141,4 @@ VALUES
  
  select author_lname, author_fname, book_id from books order by author_lname;
  
- select title from books where title like '%stories' limit 3;
  
- select title, pages from books order by pages desc limit 1;
- 
- select concat(Title, ' - ' , released_year) As Summary from books order by released_year desc limit 3;
- 
- Select title, author_lname from books where author_lname like '% %' ;
- 
- select title, released_year, stock_quantity from books order by stock_quantity asc limit 3;
- 
- select title, author_lname from books order by title , author_lname;
- 
- select upper(concat('My favourite author is', ' ', Author_fname ,' ',Author_lname, ' ', '!')) as Yell from books order by author_lname;
