@@ -104,10 +104,7 @@ select count( distinct author_fname) from books;
 select author_fname from books;
 
 
-
-
-
-    CONCAT_WS('. ',
+select CONCAT_WS('. ',
             SUBSTR(author_fname, 1, 1),
             SUBSTR(author_lname, 1, 1),
             ' ') AS 'Author Initials'
@@ -141,4 +138,21 @@ VALUES
  
  select author_lname, author_fname, book_id from books order by author_lname;
  
+ select min(released_year) from books;
+ 
+ select max(pages) from books;
+ 
+ select title,pages from books where pages = (select max(pages) from books);
+ 
+ select author_fname, author_lname, count(*) from books group by author_fname, author_lname;
+ select author_fname, author_lname, min(released_year) from books
+ group by author_fname, author_lname;
+ 
+ select sum(pages) from books;
+ 
+ select author_lname, count(*), sum(pages) from books group by author_lname;
+ 
+ select avg(released_year) from books;
+ 
+ select avg(pages) from books;
  
